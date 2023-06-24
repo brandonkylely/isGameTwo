@@ -1,4 +1,4 @@
-  # isGame:True 🎮
+  # isGame:Two 🎮
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
     if (app.isGame) {
@@ -7,13 +7,13 @@
       checkOutDeveloperGithubs()
     }
 
-  isGame:True is a short, single-player platformer RPG. 🤺
+  isGame:Two is a single-player platformer RPG, and remaster of [isGameTrue](https://github.com/brandonkylely/isGame-True). 🤺
 
-  Assume the role of a hooded swordsman in this 8-bit style RPG adventure! Orcs 👹 and pigs 🐷 spawn throughout each level to try and stop you in your tracks, so only the bravest adventurers will make it through. At the end of each game, users can submit their total scores to a global leaderboard to see how they stack up against the best of the best!
+  Assume the role of a hooded swordsman in this 8-bit style RPG adventure! Orcs and pigs spawn throughout each level to try and stop you in your tracks, so only the bravest adventurers will make it through. At the end of each game, users can submit their total scores to a global leaderboard to see how they stack up against the best of the best!
 
   ## Site Link 💡
   
-  https://isgame-true.herokuapp.com/
+  🚧In Progress🚧
 
 
   ## Table of Contents 📃
@@ -24,11 +24,11 @@
 
   [Developer Roadmap 🗺️](#developer-roadmap)
 
-  [Developers 🤓🤓🤓🤓](#developers)
+  [Developer](#developer)
 
   [Visuals 📺](#visuals)
 
-  [Acknowledgements 🤝](#acknowledgements)
+  [Acknowledgements 🤝](#art-credits)
 
   [License](#license)
 
@@ -56,16 +56,9 @@
 
   - Procedurally generated levels.
 
-  ## Developers 
-  🤓🤓🤓🤓 
+  ## Developer 
 
   Brandon Ly 🫠 : [Github](https://github.com/brandonkylely) & [LinkedIn](https://www.linkedin.com/in/brandon-ly-7300b1205/) & [Email](mailto:brandonkly@ucla.edu)
-
-  Chris Poturalski 🧐 : [Github](https://github.com/chrispoturalski) & [LinkedIn](https://www.linkedin.com/in/chris-poturalski-2a8997118/) & [Email](mailto:)
-
-  Logan Senn 😎 : [Github](https://github.com/lsenn404) & [LinkedIn](https://www.linkedin.com/in/logansenn/) & [Email](mailto:logsenn2@gmail.com)
-
-  Mirjana Dukic 🥹 : [Github](https://github.com/mjdukic) & [LinkedIn](https://www.linkedin.com/in/mirjanadukic/) & [Email](mailto:mirjanadukicc@gmail.com)
 
   ## Visuals 
   📺
@@ -74,14 +67,6 @@
   ![start-game](./images/Screen%20Shot%202023-01-30%20at%207.34.02%20PM.png)
   ![game-screenshot](./images/Screen%20Shot%202023-01-30%20at%207.34.13%20PM.png)
 
-  ## Acknowledgements 
-  🤝
-
-  ### Special Thanks ❤️
-  
-  Chad Tao : [Github](https://github.com/chadtao206)
-
-  Nick Graffis : [Github](https://github.com/nickgraffis)
 
   ## Art Credits 
   🪙
