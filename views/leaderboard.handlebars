@@ -1,0 +1,34 @@
+{{!-- <div>
+    {{#if allScores}}
+    {{#each (limit allScores 10) as |score|}}
+    <h3 id="scoreheader">your high scores!</h3>
+    <p id="playerscore">{{score.username}}:{{score.scoreValue}}</p>
+    {{else}}
+    <p class="noscore">you don't have any scores! :(</p>
+    {{/if}}
+</div> --}}
+
+<a href="#" id="return" type="button" class="btn btn-light" >Return To Menu</a>
+
+<script> 
+    function returnToGame() {
+        window.location.replace('https://isgame-true.herokuapp.com/game')
+        {{!-- window.location.replace('http://localhost:3001/game') --}}
+    }
+    document.querySelector('#return').addEventListener('click', returnToGame);
+</script>
+
+
+ {{#if allScores}}
+<h3 id="leaderboardheader" class="text-white">global leaderboard!</h3>
+
+<ol id="leaderboardlist" class="text-white">
+{{#each (limit allScores 100) as |score|}}
+<li id="leaderboarditem" class="text-white">{{add_1 @index}}: {{score.user.username}}: {{score.scoreValue}}</li>
+{{/each}}
+</ol>
+{{else}}
+<h3 id="leaderboardheader" class="text-white">oops</h3>
+<p class="noscore" class="text-white">no scores here!</p>
+{{/if}}
+
