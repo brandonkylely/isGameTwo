@@ -1,8 +1,8 @@
 {
-  "name": "project2",
+  "name": "is-game-two",
   "version": "1.0.0",
   "description": "",
-  "main": "animate.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandonkylely/project2-video-game.git"
+    "url": "git+https://github.com/brandonkylely/isGameTwo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brandonkylely/project2-video-game/issues"
+    "url": "https://github.com/brandonkylely/isGameTwo/issues"
   },
-  "homepage": "https://github.com/brandonkylely/project2-video-game#readme",
+  "homepage": "https://github.com/brandonkylely/isGameTwo#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
