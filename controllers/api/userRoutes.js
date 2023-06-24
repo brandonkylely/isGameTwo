@@ -67,6 +67,17 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/guest', async (req, res) => {
+
+    req.session.save(() => {
+      req.session.username = "guest";
+      req.session.loggedIn = true;
+
+      res.redirect('/game');
+    });
+
+});
+
 // POST /api/users/logout is a logout route for an existing user,
 //it also destroys the session so the user is no longer logged in
 router.post('/logout', (req, res) => {

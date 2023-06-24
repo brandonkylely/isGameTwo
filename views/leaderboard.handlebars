@@ -25,7 +25,11 @@
 
 <ol id="leaderboardlist" class="text-white">
 {{#each (limit allScores 100) as |score|}}
+ {{#if score.user.username}}
 <li id="leaderboarditem" class="text-white">{{add_1 @index}}: {{score.user.username}}: {{score.scoreValue}}</li>
+{{else}}
+<li id="leaderboarditem" class="text-white">{{add_1 @index}}: Guest: {{score.scoreValue}}</li>
+{{/if}}
 {{/each}}
 </ol>
 {{else}}
