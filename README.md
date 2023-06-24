@@ -15,8 +15,9 @@
   
   🚧In Progress🚧
 
-
   ## Table of Contents 📃
+
+  [Update Log](#update-log)
 
   [Technologies Used ⚙️](#technologies-used)
 
@@ -31,6 +32,10 @@
   [Acknowledgements 🤝](#art-credits)
 
   [License](#license)
+
+  ## Update Log
+
+  6/24/23: Guest login is now available! Logging in as a guest still allows for full access, but scores will be submitted anonymously!
 
   ## Technologies Used 
   ⚙️
