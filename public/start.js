@@ -14,7 +14,7 @@ class StartScene extends Phaser.Scene {
         this.background = this.add.rectangle(1750, 850, 3500, 1700, 0x0000);
         this.platform = this.physics.add.staticGroup()
 
-        this.title = this.add.text(1750, 800, `isGame:True`, {
+        this.title = this.add.text(1750, 800, `isGame:Two`, {
             fontSize: '250px',
             fill: '#fff',
           });
@@ -90,9 +90,10 @@ class StartScene extends Phaser.Scene {
         // });
 
         this.leaderboardButton.on('pointerdown', () => {
-            window.location.replace('https://isgame-true.herokuapp.com/scores');
+          // replace with heroku link
+            // window.location.replace('https://isgame-true.herokuapp.com/scores');
             
-            // window.location.replace('http://localhost:3001/scores');
+            window.location.replace('http://localhost:3001/scores');
 
             // this.scene.start('LeaderboardScene')
 
