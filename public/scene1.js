@@ -42,7 +42,7 @@ class GameScene1 extends Phaser.Scene {
       frameHeight: 20
     });
 
-    this.cameras.main.setBackgroundColor(0x9900e3);
+    this.cameras.main.setBackgroundColor(0x202020);
 
     this.load.image('tiles', 'assets/Tilemap/tiles_spritesheet.png');
     this.load.image('star-image', 'assets/star.png');

@@ -1,14 +1,9 @@
-// let backgroundMusic = document.querySelector('#backgroundMusic');
-// backgroundMusic.innerHTML = '<embed src="./assets/morning-sun-sakura-girl.mp3" loop="true" autostart="true" width="2" height="0" id="backgroundSong">';
-// let backgroundSong = document.querySelector('#backgroundSong');
-// backgroundSong.volume = 0.2;
-
 window.addEventListener('load', () => {
 let config = {
   type: Phaser.AUTO,
   width: 3500,
   height: 1400,
-  backgroundColor: 0x9900e3,
+  backgroundColor: 0x090033,
   physics: {
     default: 'arcade',
     arcade: {
@@ -24,7 +19,7 @@ let config = {
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
   pixleArt: true,
-  scene: [StartScene, MusicScene, InstructionsScene, GameScene1, GameScene2, GameScene3, PauseScene, GameOver, VictoryScene]
+  scene: [StartScene, MusicScene, InstructionsScene, GameScene1, GameScene2, GameScene3, HUDScene, PauseScene, GameOver, VictoryScene]
 };
 
 game = new Phaser.Game(config);

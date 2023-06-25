@@ -113,7 +113,7 @@ class StartScene extends Phaser.Scene {
             // testing game over scene
             // this.scene.start('GameOver');
             // this.scene.stop('StartScene');
-            window.location.replace('https://github.com/brandonkylely/project2-video-game')
+            window.location.replace('https://github.com/brandonkylely/isGameTwo')
         });
 
         this.instructionsButton.setInteractive();
