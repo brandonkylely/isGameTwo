@@ -49,7 +49,7 @@ class GameScene2 extends Phaser.Scene {
 
     this.load.image('tiles', 'assets/Tilemap/tiles_spritesheet.png');
     this.load.image('star-image', 'assets/star.png');
-    this.load.image('spring-image', 'assets/springboardUp.png')
+    this.load.image('spring-image', 'assets/springboardUp.png');
     this.load.image('background-tile', 'assets/level2mapfull.png');
     this.load.image('sword', 'assets/sword.png');
     this.load.tilemapTiledJSON('tileset2', 'Forest-Map.json');
@@ -62,7 +62,7 @@ class GameScene2 extends Phaser.Scene {
     this.load.audio('hitPig2', 'assets/sfx/hitPig2.wav');
     this.load.audio('hitTaken', 'assets/sfx/hitTaken.wav');
     this.load.audio('star', 'assets/sfx/star.wav');
-    this.load.audio('spring-sound', 'assets/sfx/spring.wav')
+    this.load.audio('spring-sound', 'assets/sfx/spring.wav');
   }
 
   createAnimations() {
@@ -207,13 +207,13 @@ class GameScene2 extends Phaser.Scene {
       this.totalStars += 1;
       console.log('total stars', this.totalStars);
     });
-    
+
     this.springLayer.forEach((object) => {
       let obj = springs.create(object.x + 35, object.y - 35, 'spring-image');
       obj.setOrigin(0.5);
       obj.body.width = object.width;
       obj.body.height = object.height;
-    })
+    });
 
     function makeDoor(doorTile) {
       let obj = doors.create(doorTile.x + 15, doorTile.y - 25);
@@ -267,7 +267,7 @@ class GameScene2 extends Phaser.Scene {
     }
 
     function springBoard() {
-      this.player.setVelocityY('-100')
+      this.player.setVelocityY('-100');
       this.inventory.jumps = 2;
       this.quietSound('spring-sound');
     }
@@ -299,7 +299,10 @@ class GameScene2 extends Phaser.Scene {
 
     // var score = 0;
     // var scoreText;
-    this.scoreText = this.add.text(16, 16, `Score: ${this.score}`, {
+    this.scoreText = this.add.text(
+      16, 
+      16, 
+      `Score: ${this.score}`, {
       fontSize: '40px',
       fill: '#fff'
     });
@@ -312,7 +315,10 @@ class GameScene2 extends Phaser.Scene {
         fill: '#fff'
       }
     );
-    this.livesText = this.add.text(3200, 50, `Lives: ${this.inventory.lives}`, {
+    this.livesText = this.add.text(
+      3200, 
+      50, 
+      `Lives: ${this.inventory.lives}`, {
       fontSize: '40px',
       fill: '#fff'
     });
@@ -393,10 +399,10 @@ class GameScene2 extends Phaser.Scene {
       this.healthText.setText(`Health: ${this.inventory.health}`);
     }
 
-    if (this.inventory.lives < 1 ) {
+    if (this.inventory.lives < 1) {
       this.scene.start('GameOver');
       this.scene.stop('GameScene2');
-    };
+    }
 
     // this.inventory.hit = true;
 
@@ -429,9 +435,9 @@ class GameScene2 extends Phaser.Scene {
 
   pigSpawn() {
     let x =
-    this.player.x < 8900
-      ? Phaser.Math.Between(100, 1000)
-      : Phaser.Math.Between(-100, -1000);
+      this.player.x < 8900
+        ? Phaser.Math.Between(100, 1000)
+        : Phaser.Math.Between(-100, -1000);
     let pig = this.pigs.create(this.player.x + x, 10, 'pig').setScale(3);
     pig.setBounce(0);
     pig.setCollideWorldBounds(true);
@@ -543,12 +549,10 @@ class GameScene2 extends Phaser.Scene {
         this.player.setVelocityY(-550);
         this.player.anims.play('jumping', true);
         this.inventory.jumps--;
-        console.log('flip true, setting to false');
       }
     }
     if (this.cursors.SPACE.isUp && !this.flipFlop) {
       this.flipFlop = true;
-      console.log('flop false, setting to true');
     }
 
     if (this.cursors.S.isDown && !this.player.body.blocked.down) {
