@@ -8,8 +8,26 @@ class HUDScene extends Phaser.Scene {
     this.livesText;
     this.defeatsText;
   }
+  init(data) {
+    console.log('total stars', this.totalStars);
+    console.log('init', data);
+    this.score = data.score;
+    this.totalKills = data.kills;
+    this.inventory = data.inventory;
+    //difficulty
+    //kills
+  }
   preload() {}
   create() {
+    // this.score = 0;
+    // this.totalKills = 0;
+    // this.inventory = {
+    //   health: 100,
+    //   lives: 3,
+    //   enemiesDefeated: 0};
+    //   this.scene.alpha = 0.2;
+    // console.log('scene', this.scene);
+    // https://phaser.discourse.group/t/emit-events-across-scenes/666
     this.scene.bringToTop()
     // this.cursors = this.input.keyboard.addKeys('W,S,A,D, SPACE, P, ESC');
     this.scoreText = this.add.text(16, 16, `Score: ${this.score}`, {

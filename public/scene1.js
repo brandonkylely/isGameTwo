@@ -239,7 +239,7 @@ class GameScene1 extends Phaser.Scene {
       star.disableBody(true, true);
       this.inventory.starsCollected += 1;
       this.score += 10;
-      this.scoreText.setText(`Score: ${this.score}`);
+      // this.scoreText.setText(`Score: ${this.score}`);
       if (this.inventory.starsCollected % 5 === 0) {
         this.orcSpawn();
         this.pigSpawn();
@@ -269,34 +269,41 @@ class GameScene1 extends Phaser.Scene {
       }
     }
 
+    this.scene.launch('HUDScene', {
+      score: this.score,
+      difficulty: this.difficulty,
+      kills: this.inventory.enemiesDefeated,
+      inventory: this.inventory
+    });
+
     // var score = 0;
     // var scoreText;
-    this.scoreText = this.add.text(16, 16, `Score: ${this.score}`, {
-      fontSize: '40px',
-      fill: '#fff'
-    });
-    this.healthText = this.add.text(
-      3200,
-      16,
-      `Health: ${this.inventory.health}`,
-      {
-        fontSize: '40px',
-        fill: '#fff'
-      }
-    );
-    this.livesText = this.add.text(3200, 50, `Lives: ${this.inventory.lives}`, {
-      fontSize: '40px',
-      fill: '#fff'
-    });
-    this.defeatsText = this.add.text(
-      3200,
-      84,
-      `Defeats: ${this.inventory.enemiesDefeated}`,
-      {
-        fontSize: '40px',
-        fill: '#fff'
-      }
-    );
+    // this.scoreText = this.add.text(16, 16, `Score: ${this.score}`, {
+    //   fontSize: '40px',
+    //   fill: '#fff'
+    // });
+    // this.healthText = this.add.text(
+    //   3200,
+    //   16,
+    //   `Health: ${this.inventory.health}`,
+    //   {
+    //     fontSize: '40px',
+    //     fill: '#fff'
+    //   }
+    // );
+    // this.livesText = this.add.text(3200, 50, `Lives: ${this.inventory.lives}`, {
+    //   fontSize: '40px',
+    //   fill: '#fff'
+    // });
+    // this.defeatsText = this.add.text(
+    //   3200,
+    //   84,
+    //   `Defeats: ${this.inventory.enemiesDefeated}`,
+    //   {
+    //     fontSize: '40px',
+    //     fill: '#fff'
+    //   }
+    // );
 
     this.physics.add.collider(this.orcs, worldLayer);
     this.physics.add.collider(this.orcs, this.pigs);
@@ -327,8 +334,8 @@ class GameScene1 extends Phaser.Scene {
     enemy.disableBody(true, true);
     this.inventory.enemiesDefeated++;
     this.score += 50;
-    this.scoreText.setText(`Score: ${this.score}`);
-    this.defeatsText.setText(`Defeats: ${this.inventory.enemiesDefeated}`);
+    // this.scoreText.setText(`Score: ${this.score}`);
+    // this.defeatsText.setText(`Defeats: ${this.inventory.enemiesDefeated}`);
     let rand = Math.floor(Math.random() * 2);
     if (rand === 0) {
       // this.sound.play('hitPig');
