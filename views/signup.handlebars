@@ -1,17 +1,45 @@
 <h2>hasSignUpPage:True </h2>
 
-<form id="signup-form" class="card-body" method="POST" action="/api/user">
-  <div class="form-outline mb-4">
-    <label for="username-input-signup" class="form-label text-white">username</label>
-    <input name="username" type="text" id="username-input-signup" class="form-control" />
+{{#if usernameError}}
+  <div class='w-25 mx-auto alert alert-warning' role='alert'>
+    Username unavailable.
   </div>
-  
-  <div class="form-outline mb-4">
-    <label for="password-input-signup" class="form-label text-white">password</label>
-    <input name= "password" type="password" id="password-input-signup" class="form-control" />
+{{/if}}
+
+{{#if passwordError}}
+  <div class='w-25 mx-auto alert alert-warning' role='alert'>
+    Password must be at least 4 characters.
+  </div>
+{{/if}}
+
+<form id='signup-form' class='card-body' method='POST' action='/api/user'>
+  <div class='form-outline mb-4'>
+    <label
+      for='username-input-signup'
+      class='form-label text-white'
+    >username</label>
+    <input
+      name='username'
+      type='text'
+      id='username-input-signup'
+      class='form-control'
+    />
   </div>
 
-  <button type="submit" class="btn btn-light">sign up</button>
+  <div class='form-outline mb-4'>
+    <label
+      for='password-input-signup'
+      class='form-label text-white'
+    >password</label>
+    <input
+      name='password'
+      type='password'
+      id='password-input-signup'
+      class='form-control'
+    />
+  </div>
+
+  <button type='submit' class='btn btn-light'>sign up</button>
 </form>
 
-{{!-- <script src="/js/signup.js"></script> --}}
+{{! <script src="/js/signup.js"></script> }}

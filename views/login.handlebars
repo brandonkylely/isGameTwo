@@ -4,10 +4,16 @@
   <h2 class='text-white'>isGame:Two</h2>
 
   <h5 class='text-white'> isLoggedIn:False </h5>
-  {{#if userError }}
-  <div class='w-25 mx-auto alert alert-warning' role='alert'>
-    Incorrect username or password.
-  </div>
+  {{#if usernameError}}
+    <div class='w-25 mx-auto alert alert-warning' role='alert'>
+      Incorrect username.
+    </div>
+  {{/if}}
+
+  {{#if passwordError}}
+    <div class='w-25 mx-auto alert alert-warning' role='alert'>
+      Incorrect password.
+    </div>
   {{/if}}
 
   <form

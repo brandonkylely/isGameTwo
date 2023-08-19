@@ -18,16 +18,14 @@ router.get('/login', (req, res) => {
     res.redirect('/game');
     return;
   }
-  res.render('login');
-});
+  const usernameError = req.session.usernameError || false;
+  
+  const passwordError = req.session.passwordError || false;
+  console.log(usernameError, passwordError);
 
-router.get('/login_retry', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/game');
-    return;
-  }
-  let userError = true;
-  res.render('login', {userError});
+  req.session.destroy();
+  res.render('login', {usernameError, passwordError});
+
 });
 
 router.get('/signup', (req, res) => {

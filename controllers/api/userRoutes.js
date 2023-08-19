@@ -3,7 +3,11 @@ const { User } = require('../../models');
 
 // POST /api/user is a registration route for creating a new user
 router.post('/', async (req, res) => {
-  if (req.body.username === "guest" || req.body.username === null || req.body.username === undefined) {
+  if (
+    req.body.username.toLower() === 'guest' ||
+    req.body.username === null ||
+    req.body.username === undefined
+  ) {
     return res.redirect('/signup');
   }
 
@@ -15,7 +19,7 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
     });
     //need to only be redirecting, not also rendering, that was the bug
-    res.redirect('/game')
+    res.redirect('/game');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -38,7 +42,6 @@ router.post('/', async (req, res) => {
 //   }
 // });
 
-
 // POST /api/user/login is a login route for an existing user
 router.post('/login', async (req, res) => {
   try {
@@ -49,15 +52,16 @@ router.post('/login', async (req, res) => {
     });
 
     if (!user) {
-      res.redirect('/login_retry');
-      return;
+      req.session.usernameError = true;
+      return res.redirect('/login');
     }
 
     const validPassword = user.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res.redirect('/game');
-      return;
+      req.session.passwordError = true;
+      return res.redirect('/game');
+      
     }
 
     req.session.save(() => {
@@ -72,14 +76,12 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/guest', async (req, res) => {
+  req.session.save(() => {
+    req.session.username = 'guest';
+    req.session.loggedIn = true;
 
-    req.session.save(() => {
-      req.session.username = "guest";
-      req.session.loggedIn = true;
-
-      res.redirect('/game');
-    });
-
+    res.redirect('/game');
+  });
 });
 
 // POST /api/user/logout is a logout route for an existing user,
