@@ -3,15 +3,36 @@ const { User } = require('../../models');
 
 // POST /api/user is a registration route for creating a new user
 router.post('/', async (req, res) => {
-  if (
-    req.body.username.toLower() === 'guest' ||
-    req.body.username === null ||
-    req.body.username === undefined
-  ) {
-    return res.redirect('/signup');
-  }
 
   try {
+    // test if username already exists
+    const userFind = await User.findOne({
+      where: {
+        username: req.body.username
+      }
+    });
+
+    if (
+      userFind ||
+      req.body.username.toLowerCase() === 'guest' ||
+      req.body.username === null ||
+      req.body.username === undefined
+    ) {
+      req.session.usernameError = true;
+      return res.redirect('/signup');
+    }
+  
+    if (
+      req.body.password.length < 4 ||
+      req.body.password === null ||
+      req.body.password === undefined
+    ) {
+      req.session.passwordError = true;
+  
+      return res.redirect('/signup');
+    }
+
+
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -60,8 +81,7 @@ router.post('/login', async (req, res) => {
 
     if (!validPassword) {
       req.session.passwordError = true;
-      return res.redirect('/game');
-      
+      return res.redirect('/login');
     }
 
     req.session.save(() => {

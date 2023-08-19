@@ -19,37 +19,39 @@ router.get('/login', (req, res) => {
     return;
   }
   const usernameError = req.session.usernameError || false;
-  
+
   const passwordError = req.session.passwordError || false;
-  console.log(usernameError, passwordError);
 
   req.session.destroy();
-  res.render('login', {usernameError, passwordError});
-
+  res.render('login', { usernameError, passwordError });
 });
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     // console.log('logged in');
-    res.redirect('/game');
-    return;
+    return res.redirect('/game');
   }
-  res.render('signup');
+  const usernameError = req.session.usernameError || false;
+
+  const passwordError = req.session.passwordError || false;
+
+  req.session.destroy();
+  res.render('signup', { usernameError, passwordError });
 });
 
 router.get('/scores', async (req, res) => {
-try {
+  try {
     const scoreData = await Score.findAll({
-      include: [{ model: User, attributes: ['username']}],
+      include: [{ model: User, attributes: ['username'] }],
       attributes: {
         exclude: ['userId', 'id']
-    },
-      order: [['scoreValue', 'DESC']],
+      },
+      order: [['scoreValue', 'DESC']]
     });
 
     const allScores = scoreData.map((scores) => scores.get({ plain: true }));
     // res.status(200).json(allScores);
-    res.render('leaderboard', {allScores});
+    res.render('leaderboard', { allScores });
   } catch (err) {
     res.status(500).json(err);
   }
