@@ -1,8 +1,12 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// POST /api/users is a registration route for creating a new user
+// POST /api/user is a registration route for creating a new user
 router.post('/', async (req, res) => {
+  if (req.body.username === "guest" || req.body.username === null || req.body.username === undefined) {
+    return res.redirect('/signup');
+  }
+
   try {
     const userData = await User.create(req.body);
 
@@ -18,7 +22,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// // POST /api/users is a registration route for creating a new user
+// // POST /api/user is a registration route for creating a new user
 // router.post('/', async (req, res) => {
 //   console.log(req.body);
 //   try {
@@ -35,7 +39,7 @@ router.post('/', async (req, res) => {
 // });
 
 
-// POST /api/users/login is a login route for an existing user
+// POST /api/user/login is a login route for an existing user
 router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({
@@ -45,7 +49,7 @@ router.post('/login', async (req, res) => {
     });
 
     if (!user) {
-      res.redirect('/game');
+      res.redirect('/login_retry');
       return;
     }
 
@@ -78,7 +82,7 @@ router.post('/guest', async (req, res) => {
 
 });
 
-// POST /api/users/logout is a logout route for an existing user,
+// POST /api/user/logout is a logout route for an existing user,
 //it also destroys the session so the user is no longer logged in
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {

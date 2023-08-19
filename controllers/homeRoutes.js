@@ -21,6 +21,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/login_retry', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/game');
+    return;
+  }
+  let userError = true;
+  res.render('login', {userError});
+});
+
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     // console.log('logged in');
