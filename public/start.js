@@ -91,9 +91,11 @@ class StartScene extends Phaser.Scene {
 
         this.leaderboardButton.on('pointerdown', () => {
           // replace with heroku link
-            // window.location.replace('https://isgame-true.herokuapp.com/scores');
-            
+          if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
             window.location.replace('http://localhost:3001/scores');
+          } else {
+            window.location.replace('https://isgame-two-89dd87bf525a.herokuapp.com/scores');
+          }
 
             // this.scene.start('LeaderboardScene')
 

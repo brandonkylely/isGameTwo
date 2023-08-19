@@ -12,9 +12,12 @@
 
 <script> 
     function returnToGame() {
-      {{!-- replace with heroku link --}}
-        {{!-- window.location.replace('https://isgame-true.herokuapp.com/game') --}}
-        window.location.replace('http://localhost:3001/game')
+      // replace with heroku link
+          if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+            window.location.replace('http://localhost:3001/game');
+          } else {
+            window.location.replace('https://isgame-two-89dd87bf525a.herokuapp.com/game');
+          }
     }
     document.querySelector('#return').addEventListener('click', returnToGame);
 </script>
