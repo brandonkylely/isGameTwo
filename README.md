@@ -13,11 +13,9 @@
 
   ## Site Link 💡
   
-  🚧In Progress🚧
+  https://isgame-two-89dd87bf525a.herokuapp.com/
 
   ## Table of Contents 📃
-
-  [Update Log](#update-log)
 
   [Technologies Used ⚙️](#technologies-used)
 
@@ -33,10 +31,6 @@
 
   [License](#license)
 
-  ## Update Log
-
-  6/24/23: Guest login is now available! Logging in as a guest still allows for full access, but scores will be submitted anonymously!
-
   ## Technologies Used 
   ⚙️
 
@@ -45,21 +39,20 @@
   ## Usage 
   🤔
   First time users will need to, register for an account. Returning users can login with their existing credentials. After login, users will be redirected to the game menu, where you can start a new game, see the instructions, or navigate to the leaderboards. 
+
+  ## Developer Roadmap 
+  🗺️
+
+  - Procedurally generated levels.
+  
+  - Coop functionality.
+
+  - Customizable player sprites.
   
   ### Game Instructions
 
   Use space bar to jump and WASD keys for direction movement and sword aiming. Use P to pause the game and take a break 💤. Collect coins and defeat enemies to gain points, and enter the door to move to the next stage! Avoid being hit too many times, as getting hit reduces your end-of-stage point multiplier and losing all lives will result in a game over!
 
-  ## Developer Roadmap 
-  🗺️
-
-  - Coop functionality.
-
-  - Customizable player sprites.
-
-  - More levels.
-
-  - Procedurally generated levels.
 
   ## Developer 
 
@@ -68,10 +61,9 @@
   ## Visuals 
   📺
   
-  ![login-screenshot](./images/Screen%20Shot%202023-01-30%20at%207.33.37%20PM.png)
-  ![start-game](./images/Screen%20Shot%202023-01-30%20at%207.34.02%20PM.png)
-  ![game-screenshot](./images/Screen%20Shot%202023-01-30%20at%207.34.13%20PM.png)
-
+  ![login-screenshot](./images/site-image-1.jpg)
+  ![start-game](./images/site-image-1.jpg)
+  ![game-screenshot](./images/site-image-1.jpg)
 
   ## Art Credits 
   🪙
