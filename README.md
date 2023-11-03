@@ -7,7 +7,7 @@
       checkOutDeveloperGithubs()
     }
 
-  isGame:Two is a single-player platformer RPG, and remaster of [isGameTrue](https://github.com/brandonkylely/isGame-True). 🤺
+  isGame:Two is a single-player platformer RPG. It is a continuation of development for [isGameTrue](https://github.com/brandonkylely/isGame-True).
 
   Assume the role of a hooded swordsman in this 8-bit style RPG adventure! Orcs and pigs spawn throughout each level to try and stop you in your tracks, so only the bravest adventurers will make it through. At the end of each game, users can submit their total scores to a global leaderboard to see how they stack up against the best of the best!
 
